@@ -10,15 +10,15 @@ chai.use(chaiHttp);
 
 const { expect } = chai;
 
-import TeamModel from '../models/TeamModel';
+import TeamsModel from '../models/TeamsModel';
 import { getTeam, getTeams } from './mocks/teamsMock';
 
 describe('Testing the Teams Endpoint', () => {
 
   describe('Endpoint GET/teams', () => {
 
-    before(async () => sinon.stub(TeamModel.prototype, 'findAll').resolves(getTeams));
-    after(() => (TeamModel.prototype.findAll as sinon.SinonStub).restore());
+    before(async () => sinon.stub(TeamsModel.prototype, 'findAll').resolves(getTeams));
+    after(() => (TeamsModel.prototype.findAll as sinon.SinonStub).restore());
   
     it ('Endpoint GET/teams succeeded', async () => {
       const get = await chai.request(app).get('/teams');
@@ -31,8 +31,8 @@ describe('Testing the Teams Endpoint', () => {
 
   describe('Enspoint GET/teams/:id', () => {
 
-    before(async () => sinon.stub(TeamModel.prototype, 'findOne').resolves(getTeam));
-    after(() => (TeamModel.prototype.findOne as sinon.SinonStub).restore());
+    before(async () => sinon.stub(TeamsModel.prototype, 'findOne').resolves(getTeam));
+    after(() => (TeamsModel.prototype.findOne as sinon.SinonStub).restore());
 
     it ('Endpoint GET/teams/:id succeeded', async () => {
       const get = await chai.request(app).get(`/teams/${getTeam.id}`);
