@@ -29,4 +29,10 @@ export default class UserService {
       return { code: 401, message: 'Token must be a valid token' };
     }
   };
+
+  getRoleObject = async (email: string) => {
+    const user = await this.model.findUserByEmail(email);
+    if (!user) return { status: 'UNAUTHORIZED', data: { message: 'Invalid email' } };
+    return { status: 'SUCCESSFUL', data: user.role };
+  };
 }
