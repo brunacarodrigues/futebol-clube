@@ -37,7 +37,7 @@ Matches.init({
   awayTeamId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    field: 'away_team',
+    field: 'away_team_id',
     references: {
       model: 'teams',
       key: 'id',
