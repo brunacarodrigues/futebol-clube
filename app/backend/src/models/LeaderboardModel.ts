@@ -10,4 +10,13 @@ export default class LeaderboardModel {
       include: [{ model: Matches, as: accordingTo, where: { inProgress: false } }],
     });
   }
+
+  // async getClassify(): Promise<ILResult[]> {
+  //   return this.model.findAll({
+  //     include: [
+  //       { model: Teams, as: 'homeTeam', attributes: { exclude: ['id'] } },
+  //       { model: Teams, as: 'awayTeam', attributes: { exclude: ['id'] } },
+  //     ],
+  //   });
+  // }
 }
