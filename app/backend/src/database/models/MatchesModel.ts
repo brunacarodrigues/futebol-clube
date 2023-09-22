@@ -1,9 +1,10 @@
-import { Model, DataTypes, InferAttributes, InferCreationAttributes } from 'sequelize';
+import { Model, DataTypes, InferAttributes,
+  InferCreationAttributes, CreationOptional } from 'sequelize';
 import TeamsModel from './TeamsModel';
 import db from '.';
 
 class Matches extends Model<InferAttributes<Matches>, InferCreationAttributes<Matches>> {
-  declare id?: number;
+  declare id: CreationOptional<number>;
   declare homeTeamId: number;
   declare homeTeamGoals: number;
   declare awayTeamId: number;
