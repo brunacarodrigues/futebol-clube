@@ -1,6 +1,6 @@
 import { Model, DataTypes, InferAttributes,
   InferCreationAttributes, CreationOptional } from 'sequelize';
-import TeamsModel from './TeamsModel';
+import Teams from './TeamsModel';
 import db from '.';
 
 class Matches extends Model<InferAttributes<Matches>, InferCreationAttributes<Matches>> {
@@ -63,10 +63,10 @@ Matches.init({
   underscored: true,
 });
 
-Matches.belongsTo(TeamsModel, { foreignKey: 'homeTeamId', as: 'homeTeam' });
-Matches.belongsTo(TeamsModel, { foreignKey: 'awayTeamId', as: 'awayTeam' });
+Matches.belongsTo(Teams, { foreignKey: 'homeTeamId', as: 'homeTeam' });
+Matches.belongsTo(Teams, { foreignKey: 'awayTeamId', as: 'awayTeam' });
 
-TeamsModel.hasMany(Matches, { foreignKey: 'homeTeamId', as: 'homeMatch' });
-TeamsModel.hasMany(Matches, { foreignKey: 'awayTeamId', as: 'awayMatch' });
+Teams.hasMany(Matches, { foreignKey: 'homeTeamId', as: 'homeGame' });
+Teams.hasMany(Matches, { foreignKey: 'awayTeamId', as: 'awayGame' });
 
 export default Matches;
