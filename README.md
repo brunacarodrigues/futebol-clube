@@ -1,10 +1,2 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Projeto do módulo de Back-End.
+Desenvolvimento de uma aplicação com Node.js, Express e bancos de dados, incluindo a criação de endpoints para realizar operações CRUD, implementação de testes unitários para garantir a qualidade do código, criação de migrações e modelos para manipulação de dados no banco de dados, implementação de autenticação de usuários, desenvolvimento de middleware para validação de tokens, e criação de endpoints para consultas e manipulações específicas de partidas e classificações de times, atualização da tabela de classificação após a inserção de partidas específicas.
